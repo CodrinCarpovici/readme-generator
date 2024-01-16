@@ -28,11 +28,12 @@ ${data.description}
 ## Table of Contents
 1. [Installation](#installation)
 2. [Usage](#usage)
-3. [License](#license)
-4. [Technologies](#technologies)
-5. [Contributing](#contributing)
-6. [Tests](#tests)
-7. [Questions](#questions)
+3. [Contributing](#Contributing)
+4. [Credits](#credits)
+5. [License](#license)
+6. [Badges](#technologies)
+7. [Tests](#tests)
+8. [Questions](#questions)
 
 ## Installation
 ${data.installation}
@@ -40,6 +41,9 @@ ${data.installation}
 ## Usage
 Go To: [${data.live}](${data.live}) and view the website.  
 ${data.usage}
+
+## Contributing
+${data.contributing}
 
 ## Credits
 ${data.credits}
@@ -52,6 +56,10 @@ ${technologiesBadges}
 
 ## Tests
 ${data.tests}
+
+## Questions
+* GitHub Profile: [${data.username}](https://github.com/${data.username})
+* For additional questions, contact me at: [${data.email}](mailto:${data.email})
 `;
 }
 

@@ -32,6 +32,11 @@ const questions = [
   },
   {
     type: "input",
+    name: "contributing",
+    message: "Enter contribution guidelines:",
+  },
+  {
+    type: "input",
     name: "credits",
     message: "Enter the project credits:",
   },
@@ -60,6 +65,16 @@ const questions = [
     type: "input",
     name: "tests",
     message: "Enter test instructions:",
+  },
+  {
+    type: "input",
+    name: "username",
+    message: "Enter your GitHub username:",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "Enter your email address:",
   },
 ];
 
