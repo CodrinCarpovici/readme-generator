@@ -6,7 +6,21 @@ function generateMarkdown(data) {
     data.license === "None"
       ? "No license was selected"
       : `![License](https://img.shields.io/badge/License-${data.license}-${randomBadgeColor}.svg)`;
+
+  const technologiesBadges =
+    data.technologies && data.technologies.length > 0
+      ? data.technologies
+          .map(
+            (tech) =>
+              `![${tech}](https://img.shields.io/badge/${encodeURIComponent(
+                tech
+              )}-${randomBadgeColor}.svg)`
+          )
+          .join(" ")
+      : "No technologies specified";
+
   return `# ${data.title}
+
 
 ## Description
 ${data.description}
@@ -21,10 +35,10 @@ ${data.description}
 7. [Questions](#questions)
 
 ## Installation
+${data.installation}
 
 ## Usage
 Go To: [${data.live}](${data.live}) and view the website.  
-${data.installation}
 ${data.usage}
 
 ## Credits
@@ -34,8 +48,10 @@ ${data.credits}
 ${licenseBadge}
 
 ## Badges
+${technologiesBadges}
 
 ## Tests
+${data.tests}
 `;
 }
 
