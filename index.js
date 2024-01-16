@@ -60,11 +60,20 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-    return fs.writeFileSync(fileName, data);
+  return fs.writeFileSync(fileName, data);
 }
 
 // function to initialize program
-function init() {}
+function init() {
+  inquirer
+    .prompt(questions)
+    .then((answers) => {
+      const fileName = path.join(process.cwd(), "README.md");
+      const readmeContent = generateMarkdown(answers);
+      writeToFile(fileName, readmeContent);
+    })
+    .catch((err) => console.log(err));
+}
 
 // function call to initialize program
 init();
