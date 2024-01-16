@@ -1,5 +1,11 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
+  const colors = ["blue", "red", "orange", "pink", "purple", "green"];
+  const randomBadgeColor = colors[Math.floor(Math.random() * colors.length)];
+  const licenseBadge =
+    data.license === "None"
+      ? "No license was selected"
+      : `![License](https://img.shields.io/badge/License-${data.license}-${randomBadgeColor}.svg)`;
   return `# ${data.title}
 
 ## Description
@@ -22,8 +28,10 @@ ${data.installation}
 ${data.usage}
 
 ## Credits
+${data.credits}
 
 ## License
+${licenseBadge}
 
 ## Badges
 
