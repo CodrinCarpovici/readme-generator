@@ -22,8 +22,18 @@ const questions = [
   },
   {
     type: "input",
+    name: "live",
+    message: "Enter live site link:",
+  },
+  {
+    type: "input",
     name: "usage",
     message: "Enter usage information:",
+  },
+  {
+    type: "input",
+    name: "contributing",
+    message: "Enter contribution guidelines:",
   },
   {
     type: "input",
@@ -56,13 +66,34 @@ const questions = [
     name: "tests",
     message: "Enter test instructions:",
   },
+  {
+    type: "input",
+    name: "username",
+    message: "Enter your GitHub username:",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "Enter your email address:",
+  },
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  return fs.writeFileSync(fileName, data);
+}
 
 // function to initialize program
-function init() {}
+function init() {
+  inquirer
+    .prompt(questions)
+    .then((answers) => {
+      const fileName = path.join(process.cwd(), "README.md");
+      const readmeContent = generateMarkdown(answers);
+      writeToFile(fileName, readmeContent);
+    })
+    .catch((err) => console.log(err));
+}
 
 // function call to initialize program
 init();
