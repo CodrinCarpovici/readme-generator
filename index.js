@@ -22,6 +22,11 @@ const questions = [
   },
   {
     type: "input",
+    name: "live",
+    message: "Enter live site link:",
+  },
+  {
+    type: "input",
     name: "usage",
     message: "Enter usage information:",
   },
